@@ -1,34 +1,33 @@
-/* General styles */
+
 html { 
     box-sizing: border-box;
     height: 100%;
     font-family: sans-serif;
-    margin: 0; /* Entfernt Standard-Margen */
-    padding: 0; /* Entfernt Standard-Abstände */
-    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
  
 body {
     display: flex;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
-    margin: 0; /* Entfernt Standard-Margen */
-    padding: 0; /* Entfernt Standard-Abstände */
+    margin: 0;
+    padding: 0;
     height: 100%;
-    /* align-items: center; */ /* Entfernt, um horizontales Zentrieren zu vermeiden */
+    /* align-items: center; */
 }
  
 main {
-    flex: 1; /* Ermöglicht es main, den verfügbaren Platz einzunehmen */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Zentriert alle Kinder in der Mitte */
+    align-items: center;
     width: 100%;
     padding: 20px;
-    box-sizing: border-box; /* Sorgt dafür, dass Padding nicht zu Überlauf führt */
+    box-sizing: border-box;
 }
 
-/* Sicherstellen, dass das Header-Element die volle Breite einnimmt und keine Abstände hat */
 header {
     width: 100%;
     margin: 0;
@@ -51,16 +50,15 @@ h1 {
     
 }
 
- 
-/* Styles for footer and logo */
+
 footer {
     display: flex;
-    justify-content: space-between; /* Bild links, Text mittig */
+    justify-content: space-between;
     align-items: center;
     background-color: #C50F3C;
-    padding: 1rem 5vw; /* Abstand nach innen und zur Seite */
+    padding: 1rem 5vw;
     width: 100%;
-    margin-top: auto; /* Schiebt den Footer an das untere Ende */
+    margin-top: auto;
 }
 
 footer img {
@@ -71,7 +69,7 @@ footer img {
 footer img {
     margin-left: 10vw;
     margin-right: 10vw;
-    width: 300px; /* Bildbreite */
+    width: 300px;
     padding: 0.5rem;
     background: white;
     border-radius: 3rem;
@@ -79,7 +77,7 @@ footer img {
 
 .contact-sheet {
     text-align: left;
-    flex-grow: 1; /* Ermöglicht zentrierten Text */
+    flex-grow: 1;
     font-size: 16px;
     color: #f9f7f7;
 }
@@ -89,7 +87,7 @@ footer img {
 
 .email-button {
     text-align: left;
-    flex-grow: 1; /* Ermöglicht zentrierten Text */
+    flex-grow: 1;
     font-size: 16px;
     color: #f9f7f7;
 }
@@ -105,6 +103,7 @@ footer img {
 }
 .chat-container {
     width: 600px;
+    height: 500px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -112,7 +111,7 @@ footer img {
     flex-direction: column;
     overflow: hidden;
 }
-/* Allgemeine Container-Styling */
+
 .faq-container {
     max-width: 400px;
     margin: 0 auto;
@@ -125,7 +124,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Accordion Styling */
+
 .accordion-item {
     border: 1px solid #ccc;
     margin-bottom: 10px;
@@ -156,21 +155,21 @@ h2 {
 }
 
 .accordion-body {
-    display: block; /* Block-Element für Animation */
-    max-height: 0; /* Startwert: Eingeklappt */
-    overflow: hidden; /* Inhalt wird abgeschnitten, wenn eingeklappt */
-    padding: 0 15px; /* Anfangszustand: Kein sichtbares Padding */
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
     background-color: #fff;
     font-size: 14px;
     color: #333;
-    transition: max-height 0.5s ease, padding 0.5s ease; /* Weicher Übergang für Höhe und Padding */
-    opacity: 0; /* Unsichtbar beim Start */
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    opacity: 0;
 }
 
 .accordion-body.active {
-    max-height: 500px; /* Maximale Höhe (anpassen, je nach Inhalt) */
-    padding: 15px; /* Padding wiederherstellen */
-    opacity: 1; /* Sichtbar machen */
+    max-height: 500px;
+    padding: 15px;
+    opacity: 1;
 }
 .faq-item {
     padding: 8px;
@@ -233,24 +232,6 @@ input[type="text"] {
 #send-button:hover {
     background-color: #662938;
 }
-
-.button-style {
-    padding: 10px 20px;
-    margin-top: 20px;
-    margin-left: 5px;
-    margin-bottom: 20px;
-    background-color: #971B2F;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.button-style:hover {
-    background-color: #662938;
-}
-
-
 
 #send-button:disabled {
     background-color: #a0a0a0;

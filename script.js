@@ -1,6 +1,3 @@
-function answer(input){
-    document.getElementById('answer').textContent="hello"
-}
 
 function sendMessage() {
     const userInput = document.getElementById("user-input");
@@ -12,12 +9,12 @@ function sendMessage() {
 
         // Bot-Antwort
         setTimeout(() => {
-            const response = getBotResponse(message); // Hole die Antwort vom Bot
+            const response = getBotResponse(message);
             
             if (response.startsWith("img:")) {
                 // Wenn die Antwort ein Bild ist
-                const imgSrc = response.replace("img:", "").trim(); // Bild-URL extrahieren
-                addImageToChat("bot-message", imgSrc); // Bild hinzufügen
+                const imgSrc = response.replace("img:", "").trim();
+                addImageToChat("bot-message", imgSrc);
             } else {
                 // Normale Textantwort
                 addMessageToChat("bot-message", response);
@@ -81,13 +78,16 @@ function selectFAQ(question) {
             const imgSrc = response.replace("img:", "").trim(); // Bild-URL extrahieren
             addImageToChat("bot-message", imgSrc); // Bild hinzufügen
         } else {
-            // Normale Textantwort
             addMessageToChat("bot-message", response);
         }
     }, 750);s
 }
 
 const responses = [
+    {
+        keywords: [["test", "img"]],
+        response: "img: WINlogo.png"
+    },
     {
         keywords: [["requirement", "documents"], ["needed", "documents"]],
         response: "The following documents are required for the application and need to be provided as PDF-files in the application portal: Copy of your undergraduate degree or recent statement of grades from the examination office together with an official translation (either English or German), Copy of your secondary studies (High school degree and transcript) plus an official translation (either English or German), Your Curriculum Vitae (CV) in English in tabular form, Proof of your English language skills (a regular copy or original certificate), Proof of practical experience if available (copy of contract or letter of recommendation), Proof of further language skills if available (official language certificate), Applicants from China, India, Vietnam, and Mongolia will have to include APS certification."
@@ -211,11 +211,8 @@ function getBotResponse(userInput) {
         }
     }
     return "Sorry, I did not understand your question. Please rephrase or use the questions under FAQ! " +
-        "If I cannot answer your questions, David Horneber can help you with any further questions " +
-        'by emailing <a href="mailto:studium-iis@fau.de?subject=Questions concerning IIS-Application" >studium-iis@fau.de</a> ' +        
-        'or calling </strong> <a href="tel:+49911530296475">+49 911 5302-96475</a>. ' +
-        "Office hours are Tuesday 10:00 - 11:30.";
-}
+        "If I cannot answer your questions, please contact the relevant office";
+    }
 
 function levenshteinDistance(a, b) {
     const matrix = [];
@@ -246,7 +243,7 @@ function levenshteinDistance(a, b) {
 
 function toggleAccordion(sectionId) {
     const section = document.getElementById(sectionId);
-    const header = section.previousElementSibling; // Der Header vor dem Body
+    const header = section.previousElementSibling;
     const isActive = section.classList.contains("active");
 
     // Alle aktiven Abschnitte und Header zurücksetzen
@@ -272,4 +269,4 @@ function toggleAccordion(sectionId) {
 }
 
 
-addMessageToChat("bot-message", "Hello my name is IISyPeasy, how can I help you?");
+addMessageToChat("bot-message", "Hello, how can I help you?");
