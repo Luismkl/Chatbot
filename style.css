@@ -1,0 +1,262 @@
+/* General styles */
+html { 
+    box-sizing: border-box;
+    height: 100%;
+    font-family: sans-serif;
+    margin: 0; /* Entfernt Standard-Margen */
+    padding: 0; /* Entfernt Standard-Abstände */
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+}
+ 
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    margin: 0; /* Entfernt Standard-Margen */
+    padding: 0; /* Entfernt Standard-Abstände */
+    height: 100%;
+    /* align-items: center; */ /* Entfernt, um horizontales Zentrieren zu vermeiden */
+}
+ 
+main {
+    flex: 1; /* Ermöglicht es main, den verfügbaren Platz einzunehmen */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert alle Kinder in der Mitte */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* Sorgt dafür, dass Padding nicht zu Überlauf führt */
+}
+
+/* Sicherstellen, dass das Header-Element die volle Breite einnimmt und keine Abstände hat */
+header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+ 
+h1 {
+    background-color: #C50F3C;
+    color: #ffffff;
+    padding: 30px 0;
+    margin-top: 0;
+    text-align: center;
+    width:100%;
+    font-size: 26px;
+}
+ 
+ 
+.center {
+    text-align: center;
+    
+}
+
+ 
+/* Styles for footer and logo */
+footer {
+    display: flex;
+    justify-content: space-between; /* Bild links, Text mittig */
+    align-items: center;
+    background-color: #C50F3C;
+    padding: 1rem 5vw; /* Abstand nach innen und zur Seite */
+    width: 100%;
+    margin-top: auto; /* Schiebt den Footer an das untere Ende */
+}
+
+footer img {
+    display: flex;
+    justify-content: flex-start;
+}
+
+footer img {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 300px; /* Bildbreite */
+    padding: 0.5rem;
+    background: white;
+    border-radius: 3rem;
+}
+
+.contact-sheet {
+    text-align: left;
+    flex-grow: 1; /* Ermöglicht zentrierten Text */
+    font-size: 16px;
+    color: #f9f7f7;
+}
+.contact-sheet h2 {
+    font-size: 20px;
+}
+
+.email-button {
+    text-align: left;
+    flex-grow: 1; /* Ermöglicht zentrierten Text */
+    font-size: 16px;
+    color: #f9f7f7;
+}
+ 
+
+.back {
+    padding: 10px;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+}
+.chat-container {
+    width: 600px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+/* Allgemeine Container-Styling */
+.faq-container {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    padding-bottom: 50px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Accordion Styling */
+.accordion-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: #E9ECF0;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover {
+    background-color: #C50F3C;
+    color: white;
+}
+.accordion-header.active {
+    background-color: #C50F3C;
+    color: white;
+}
+.accordion-icon {
+    font-size: 14px;
+    color: #777;
+}
+
+.accordion-body {
+    display: block; /* Block-Element für Animation */
+    max-height: 0; /* Startwert: Eingeklappt */
+    overflow: hidden; /* Inhalt wird abgeschnitten, wenn eingeklappt */
+    padding: 0 15px; /* Anfangszustand: Kein sichtbares Padding */
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    transition: max-height 0.5s ease, padding 0.5s ease; /* Weicher Übergang für Höhe und Padding */
+    opacity: 0; /* Unsichtbar beim Start */
+}
+
+.accordion-body.active {
+    max-height: 500px; /* Maximale Höhe (anpassen, je nach Inhalt) */
+    padding: 15px; /* Padding wiederherstellen */
+    opacity: 1; /* Sichtbar machen */
+}
+.faq-item {
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.faq-item:hover {
+    background-color: #d0d0d0;
+}
+.chat-history {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.message {
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+.user-message {
+    align-self: flex-end;
+    background-color: #F2DED1;
+    text-align: right;
+}
+.bot-message {
+    align-self: flex-start;
+    background-color: #f0f0f0;
+    text-align: left;
+}
+.input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#send-button {
+    padding: 10px 20px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #971B2F;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #662938;
+}
+
+.button-style {
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    background-color: #971B2F;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-style:hover {
+    background-color: #662938;
+}
+
+
+
+#send-button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+#send-button:hover:not(:disabled) {
+    background-color: #662938;
+}
