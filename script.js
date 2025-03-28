@@ -35,7 +35,7 @@ function addMessageToChat(type, text) {
     const messageElement = document.createElement("div");
     messageElement.classList.add("message", type);
     
-    messageElement.innerHTML = text;
+    messageElement.textContent = text;
 
     // Zur Chat-Historie hinzufügen und automatisch scrollen
     chatHistory.appendChild(messageElement);
